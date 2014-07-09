@@ -49,7 +49,7 @@ QT_TRANSLATE_NOOP("falcoin-core", ""
 "Execute command when the best block changes (%s in cmd is replaced by block "
 "hash)"),
 QT_TRANSLATE_NOOP("falcoin-core", ""
-"Listen for JSON-RPC connections on <port> (default: 9801 or testnet: 19801)"),
+"Listen for JSON-RPC connections on <port> (default: 7775 or testnet: 6675)"),
 QT_TRANSLATE_NOOP("falcoin-core", ""
 "Number of seconds to keep misbehaving peers from reconnecting (default: "
 "86400)"),
@@ -142,7 +142,7 @@ QT_TRANSLATE_NOOP("falcoin-core", "Invalid amount for -mintxfee=<amount>: '%s'")
 QT_TRANSLATE_NOOP("falcoin-core", "Invalid amount for -paytxfee=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("falcoin-core", "Invalid amount"),
 QT_TRANSLATE_NOOP("falcoin-core", "List commands"),
-QT_TRANSLATE_NOOP("falcoin-core", "Listen for connections on <port> (default: 9802 or testnet: 19802)"),
+QT_TRANSLATE_NOOP("falcoin-core", "Listen for connections on <port> (default: 7774 or testnet: 6675)"),
 QT_TRANSLATE_NOOP("falcoin-core", "Loading addresses..."),
 QT_TRANSLATE_NOOP("falcoin-core", "Loading block index..."),
 QT_TRANSLATE_NOOP("falcoin-core", "Loading wallet..."),
