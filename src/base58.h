@@ -294,7 +294,7 @@ class CfalcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 66, // falcoin addresses start with T
+        PUBKEY_ADDRESS = 95, // falcoin addresses start with f
         SCRIPT_ADDRESS = 5,
         PUBKEY_ADDRESS_TEST = 128,
         SCRIPT_ADDRESS_TEST = 196,
