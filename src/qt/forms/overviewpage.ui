@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OverviewPage</class>
+ <widget class="QWidget" name="OverviewPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>819</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="topLayout">
+   <item>
+    <widget class="QLabel" name="labelAlerts">
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop:0 #F0D0A0, stop:1 #F8D488); color:#000000;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="margin">
+      <number>3</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QPushButton" name="btnWallet">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../falcoin.qrc">
+                <normaloff>:/icons/lock_none</normaloff>:/icons/lock_none</iconset>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Wallet</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelWalletStatus">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the falcoin network after a connection is established, but this process has not completed yet.</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: red; }</string>
+              </property>
+              <property name="text">
+               <string notr="true">(out of sync)</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="formLayout_2">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <property name="horizontalSpacing">
+             <number>12</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>12</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Balance:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="labelBalance">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>IBeamCursor</cursorShape>
+              </property>
+              <property name="toolTip">
+               <string>Your current balance</string>
+              </property>
+              <property name="text">
+               <string notr="true">0 FAL</string>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Unconfirmed:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="labelUnconfirmed">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>IBeamCursor</cursorShape>
+              </property>
+              <property name="toolTip">
+               <string>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</string>
+              </property>
+              <property name="text">
+               <string notr="true">0 FAL</string>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="labelImmatureText">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Immature:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="labelImmature">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Mined balance that has not yet matured</string>
+              </property>
+              <property name="text">
+               <string notr="true">0 FAL</string>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>&lt;b&gt;Recent transactions&lt;/b&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelTransactionsStatus">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the falcoin network after a connection is established, but this process has not completed yet.</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: red; }</string>
+              </property>
+              <property name="text">
+               <string notr="true">(out of sync)</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QListView" name="listTransactions">
+            <property name="styleSheet">
+             <string notr="true">QListView { background: transparent; }</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::NoSelection</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblInfo">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>lblInfo</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblVoteInfo">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>lblVoteInfo</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblReward">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Block Reward:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="spbVote">
+       <property name="suffix">
+        <string> FAL</string>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chkAutoVote">
+       <property name="text">
+        <string>Auto Voting</string>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnVote">
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> QPushButton {
+     border-style: outset;
+     border-width: 1px;
+     border-radius: 9px;
+     border-color: black;
+     font: bold 9px;
+     min-width: 8em;
+     padding: 3px;
+ }
+ QPushButton:pressed {
+     background-color: green;
+     border-style: inset;
+ }</string>
+       </property>
+       <property name="text">
+        <string>Vote</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="lblLogo">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../falcoin.qrc">:/images/logo</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <property name="margin">
+        <number>10</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="margin">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QRadioButton" name="rbLang_en">
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_en);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string notr="true"/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_de">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_de);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_fr">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_fr);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_es">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_es);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_it">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_it);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_pt">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_pt);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_tr">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_tr);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_ru">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_ru);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_cn">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_cn);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_jp">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_jp);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rbLang_kr">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>19</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton::indicator {
+	subcontrol-position: top center;
+	image: url(:/icons/flag_kr);
+ }
+
+ QRadioButton::indicator::unchecked {
+	width: 22px;
+	height: 16px;
+ }
+
+ QRadioButton::indicator:unchecked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:unchecked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator::checked {
+	background-color: black;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:hover {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }
+
+ QRadioButton::indicator:checked:pressed {
+	background-color: blue;
+	width: 25px;
+	height: 19px;
+ }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="margin">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QTextBrowser" name="txtChat">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(245, 245, 245);
+background-image: url(:/images/p2p);
+background-repeat: no-repeat;
+background-atFALhment:fixed;
+background-position: center;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOn</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="documentTitle">
+            <string notr="true"/>
+           </property>
+           <property name="html">
+            <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="margin">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="btnChatBold">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>B</string>
+           </property>
+           <property name="shortcut">
+            <string notr="true"/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="txtChatNick">
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(245, 245, 245);</string>
+           </property>
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="maxLength">
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="txtChatMsg">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(245, 245, 245);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="maxLength">
+            <number>140</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnChatSmiley">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="toolTip">
+            <string>List of emoticons</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../falcoin.qrc">
+             <normaloff>:/icons/smiley-button</normaloff>:/icons/smiley-button</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnChatSend">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Send</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../falcoin.qrc"/>
+ </resources>
+ <connections/>
+</ui>
