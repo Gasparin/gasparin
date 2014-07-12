@@ -1190,11 +1190,15 @@ int64 static GetVoteValue(int nHeight)
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     nSubsidy = GetVoteValue(nHeight);
+	
+	if (nHeight == 1)
+		nSubsidy = 50000 * COIN;
+
     //printf("nHeight=%d -> nSubsidy=%"PRI64d"\n", nHeight, nSubsidy);
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 40; // falcoin: 40sec.
+static const int64 nTargetTimespan = 60; // falcoin: 40sec.
 static const int64 nTargetSpacing = 20; // falcoin: 20sec.
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
