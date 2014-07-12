@@ -21,7 +21,7 @@ packages:
 reference_datetime: "2011-01-30 00:00:00"
 remotes:
 - "url": "https://github.com/gasparin/gasparin.git"
-  "dir": "falcoin"
+  "dir": "gasparin"
 files:
 - "miniupnpc-1.6.tar.gz"
 - "qrencode-3.2.0.tar.bz2"
@@ -40,7 +40,7 @@ script: |
   make $MAKEOPTS install
   cd ..
   #
-  cd falcoin
+  cd gasparin
   mkdir -p $OUTDIR/src
   git archive HEAD | tar -x -C $OUTDIR/src
   cp $OUTDIR/src/doc/README.md $OUTDIR
