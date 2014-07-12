@@ -33,7 +33,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x0000017ef38799d1f0b80f007cead620403c2341c82f2fda63827d062694036f");
+uint256 hashGenesisBlock("0x0000061303cf5bfa004646b6cd5d7454996cc06a3e63d58d3ea3d6e0ce00eb7f");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // falcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -3018,7 +3018,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xa1;
         pchMessageStart[2] = 0xf9;
         pchMessageStart[3] = 0x3a;
-        hashGenesisBlock = uint256("0x000003e3d69648da1c4cd32785f51f0202ba432c2c81ff90e41a263ea013ef9f");
+        hashGenesisBlock = uint256("0x0000061303cf5bfa004646b6cd5d7454996cc06a3e63d58d3ea3d6e0ce00eb7f");
     }
 
     //
@@ -3058,7 +3058,7 @@ bool InitBlockIndex() {
         //  vMerkleTree: 98194f5aa82cb8155e9d71cb8715d9433e1b01f2635fd899af181799d3df22d1
 
         // Genesis block
-        const char* pszTimestamp = "Brasil acaba de ser goleado en casa 7 a 1";
+        const char* pszTimestamp = "Brasil acaba de ser goleado en casa 7 a 1 la peor humillacion en su historia";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -3076,12 +3076,12 @@ bool InitBlockIndex() {
 
         if (fTestNet)
         {
-            block.nTime    = 1404859710;
-            block.nNonce   = 229184;
+            block.nTime    = 1405183048;
+            block.nNonce   = 1936792;
         }
 
 	//codigo de genesis block
-	if (false && block.GetHash() != hashGenesisBlock)
+	if (true && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
@@ -3117,7 +3117,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x102698c46d1ebeed0697789a6c0e6c6d0a7a51fdc5c083fe1b020c1f8d0e8cfe"));
+        assert(block.hashMerkleRoot == uint256("0x7bc55067258953dfab976c5a4cefcf4de91da4808b727e8ca8e1a08e3d838687"));
         block.print();
         assert(hash == hashGenesisBlock);
 
